@@ -1,0 +1,19 @@
+.collage {
+  position: relative;
+  .img {
+    position: absolute;
+  }
+  .img-1 {
+    top: 23.612%;
+    right: 25px;
+    width: 59.524%;
+    opacity: 0.9;
+    
+  }
+  .img-2 {
+    top: -6%;
+    left: 0;
+    width: 60.318%;
+    opacity: 0.9;
+  }
+}

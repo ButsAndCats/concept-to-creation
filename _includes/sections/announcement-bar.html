@@ -1,0 +1,12 @@
+{% comment %}TO do: add slick {% endcomment %}
+{% if site.announcement %}
+  <section class="announcements">
+    {% for announcement in site.announcement %}
+      <div class="announcement center">
+        {% if annoucement.url %}<a href="{{ annoucement.url }}">{% endif %}
+          <h5 class="no-margin">{{ announcement.title }}</h5>
+        {% if annoucement.url %}</a>{% endif %}
+      </div>
+    {% endfor %}
+  </section>
+{% endif %}

@@ -1,0 +1,18 @@
+{% assign icons = false %}
+{% assign social_icons_available = 'github,twitter,facebook,instagram,pinterest,fancy,google_plus,youtube,vimeo,' | split: ',' %}
+<ul class="inline" itemscope itemtype="http://schema.org/Organization">
+  <link itemprop="url" href="{{ shop.url }}">
+  {% for social in social_icons_available %}
+    {% if site[social] %}
+      <li>
+        <a href="{{ site[social] }}" title="{{ site.name }} on {{ social | replace: '_', ' ' | capitalize }}" itemprop="sameAs">
+          {% if icons %}
+            {% include 'icon-social' icon='social' %}
+          {% else %}
+            {{ social | replace: '_', ' ' | capitalize }}
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

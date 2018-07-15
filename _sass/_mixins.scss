@@ -1,0 +1,233 @@
+// Mixins ======================================================================
+
+// Prefixer (See https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_prefixer.scss)
+@mixin prefixer($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      -webkit-#{$property}: $value;
+    } @else if $prefix == moz {
+      -moz-#{$property}: $value;
+    } @else if $prefix == ms {
+      -ms-#{$property}: $value;
+    } @else if $prefix == o {
+      -o-#{$property}: $value;
+    } @else if $prefix == spec {
+      #{$property}: $value;
+    } @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+// Clearfix
+@mixin clearfix() {
+  display: block; // TBC - is this OK? Seems to help
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  *zoom: 1;
+}
+
+// Verically Align
+@mixin vertical-align() {
+  position: relative;
+  top: 50%;
+  -webkit-transform: perspective(1px) translateY(-50%);
+  -ms-transform: perspective(1px) translateY(-50%);
+  transform: perspective(1px) translateY(-50%);
+}
+
+// Transition Property (for legacy support)
+@mixin transition-property() {
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+}
+
+// Transitions
+@mixin transition() {
+  @include prefixer(transition, $transition, webkit moz ms spec);
+}
+
+// Overlays
+@mixin overlay() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Flex
+@mixin flex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin box-orient--vertical() {
+  @include prefixer(box-orient, vertical, webkit moz spec);
+}
+@mixin flex-direction($flex-direction) {
+  @include prefixer(flex-direction, $flex-direction, webkit moz ms spec);
+}
+
+// Screen Sizes & Types
+@mixin s() {
+  @media (max-width: $s) {
+    @content;
+  }
+}
+@mixin m() {
+  @media (min-width: $s) and (max-width: $l - 1px) {
+    @content;
+  }
+}
+@mixin l() {
+  @media (min-width: $l) and (max-width: $xl - 1px) {
+    @content;
+  }
+}
+@mixin xl() {
+  @media (min-width: $xl) {
+    @content;
+  }
+}
+
+// Table Grids
+@mixin table() {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  .column {
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
+    &.middle {
+      vertical-align: middle;
+    }
+    &.top {
+      vertical-align: top;
+    }
+    &.bottom {
+      vertical-align: bottom;
+    }
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+}
+
+// Reverse Grids
+@mixin reverse() {
+  direction: rtl;
+  .column {
+    direction: ltr;
+    float: right;
+  }
+}
+
+// Responsive Typography
+@mixin responsive-type($minFont, $viewport, $default, $kerning) {
+  font-size: em($default); // em fallback
+  font-size: -moz-calc(#{$minFont} + #{$viewport}vw);
+  font-size: -webkit-calc(#{$minFont} + #{$viewport}vw);
+  font-size: -o-calc(#{$minFont} + #{$viewport}vw);
+  font-size: calc(#{$minFont} + #{$viewport}vw);
+  letter-spacing: $kerning;
+}
+
+/* Background image mixins ===================================================*/
+
+// Image darkening
+@mixin image-darken($opacity) {
+  &[data-darken="#{$opacity}"] {
+    &:after {
+      content: "";
+      display: block;
+      @include overlay();
+      background-color: rgba(#000, ($opacity/100));
+    }
+  }
+}
+
+// Background images
+@mixin background-image() {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  &.contain {
+    background-size: 80%;
+  }
+  .content {
+    @include overlay();
+  }
+  @include image-darken(10);
+  @include image-darken(20);
+  @include image-darken(30);
+  @include image-darken(40);
+  @include image-darken(50);
+  @include image-darken(60);
+  @include image-darken(70);
+  @include image-darken(80);
+  @include image-darken(90);
+  @include image-darken(100);
+}
+
+// Aspect ratios
+@mixin ratio($width, $height) {
+  &[data-ratio="#{$width}:#{$height}"] {
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      padding-top: percentage($height/$width);
+    }
+  }
+}
+@mixin ratio-s($width, $height) {
+  &[data-ratio-s="#{$width}:#{$height}"] {
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      padding-top: percentage($height/$width);
+    }
+  }
+}
+.ratio {
+  @include background-image();
+  @include ratio(21, 9); // Cinematic
+  @include ratio(2, 1); // Wide
+  @include ratio(16, 9); // HD landscape
+  @include ratio(4, 3); // Standard format
+  @include ratio(7, 6); // 7:6 format
+  @include ratio(1, 1); // Square
+  @include ratio(3, 4); // Reverse standard format
+  @include ratio(3, 5); // Reverse standard format
+  @include ratio(9, 16); // HD vertical
+  @include ratio(1, 2); // Tall
+  @include ratio(9, 21); // Long
+  @include s() {
+    @include ratio-s(21, 9); // Cinematic
+    @include ratio-s(2, 1); // Wide
+    @include ratio-s(16, 9); // HD landscape
+    @include ratio-s(4, 3); // Standard format
+    @include ratio-s(7, 6); // 7:6 format
+    @include ratio-s(1, 1); // Square
+    @include ratio-s(3, 4); // Reverse standard format
+    @include ratio-s(9, 16); // HD vertical
+    @include ratio-s(1, 2); // Tall
+    @include ratio-s(9, 21); // Long
+  }
+}

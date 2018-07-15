@@ -1,0 +1,34 @@
+menu:
+  - title: Portfolio
+    url: /portfolio
+  - title: Projects
+    url: /projects
+  - title: Blog
+    url: /blog
+  # - title: Contact
+  #   url: /contact
+social:
+  - icon: instagram
+    title: Instagram
+    url: https://www.instagram.com/jewellersofneath/
+  - icon: twitter
+    title: Twitter
+    url: https://twitter.com/jewellersneath
+  - icon: facebook
+    title: Facebook
+    url: https://www.facebook.com/jewellersofneath
+  - icon: pinterest
+    title: Pinterest
+    url: https://www.pinterest.co.uk/jewellersofneath/
+  # - icon: fancy
+  #   title: fancy
+  #   url:
+  # - icon: google_plus
+  #   title: google_plus
+  #   url:
+  # - icon: youtube
+  #   title: youtube
+  #   url:
+  # - icon: vimeo
+  #   title: vimeo
+  #   url:

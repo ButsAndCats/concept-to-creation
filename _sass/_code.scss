@@ -1,0 +1,144 @@
+code.highlighter-rouge {
+  font-family: Menlo, monospace;
+  font-weight: 900;
+  color: $colorBrand;
+  overflow: scroll;
+}
+
+.highlight {
+  font-family: Menlo, monospace;
+  font-weight: 900;
+  background: rgba($colorPurple, 0.8);
+  font-size: 1.3rem;
+  color: $colorLightGray;
+  padding: $gutter/2 0px;
+  overflow: scroll;
+
+  .hll,
+  .s,
+  .sa,
+  .sb,
+  .sc,
+  .dl,
+  .sd,
+  .s2,
+  .se,
+  .sh,
+  .si,
+  .sx,
+  .sr,
+  .s1,
+  .ss {
+    color: $colorYellow;
+  }
+
+  .go {
+    color: $colorGray;
+  }
+
+  .err,
+  .g,
+  .l,
+  .n,
+  .x,
+  .p,
+  .ge,
+  .gr,
+  .gh,
+  .gi,
+  .gp,
+  .gs,
+  .gu,
+  .gt,
+  .ld,
+  .no,
+  .nd,
+  .ni,
+  .ne,
+  .nn,
+  .nx,
+  .py,
+  .w,
+  .bp {
+    color: $colorLightGray;
+  }
+
+  .gh,
+  .gi,
+  .gu {
+    font-weight: bold;
+  }
+
+  .ge {
+    text-decoration: underline;
+  }
+
+  .bp {
+    font-style: italic;
+  }
+
+  .c,
+  .ch,
+  .cm,
+  .cpf,
+  .c1,
+  .cs {
+    color: $colorViolet;
+  }
+
+  .kd,
+  .kt,
+  .nb,
+  .nl,
+  .nv,
+  .vc,
+  .vg,
+  .vi,
+  .vm {
+    color: $colorCyan;
+  }
+
+  .kd,
+  .nb,
+  .nl,
+  .nv,
+  .vc,
+  .vg,
+  .vi,
+  .vm {
+    font-style: italic;
+  }
+
+  .na,
+  .nc,
+  .nf,
+  .fm {
+    color: $colorGreen;
+  }
+
+  .k,
+  .o,
+  .cp,
+  .kc,
+  .kn,
+  .kp,
+  .kr,
+  .nt,
+  .ow {
+    color: $colorPink;
+  }
+
+  .m,
+  .mb,
+  .mf,
+  .mh,
+  .mi,
+  .mo,
+  .il {
+    color: $colorPurple;
+  }
+
+  .gd {
+    color: $colorRed;
+  }
+}

@@ -1,0 +1,23 @@
+<header class="theme-header">
+  <div class="container l">
+    <div class="row">
+      <div class="column l12 m12 s12 center padding-top-5x padding-bottom-3x">
+        <meta itemprop="name" content="{{ site.name }}">
+        {% if page.layout == 'home' %}
+          <h1 class="h4" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <a href="/" itemprop="url" title="{{ site.name }}">
+              {% include logo.html %}
+            </a>
+          </h1>
+        {% else %}
+          <span class="h4" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <a href="/" itemprop="url" title="{{ site.name }}">
+              {% include logo.html %}
+            </a>
+          </span>
+        {% endif %}
+        <hr>
+      </div>
+    </div>
+  </div>
+</header>

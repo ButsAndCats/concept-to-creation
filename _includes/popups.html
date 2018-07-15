@@ -1,0 +1,30 @@
+
+<div class="popup overlay full-screen" id="mobilePopup">
+  <div class="popup-inner">
+    <div class="popup-content container padding-top center">
+      <ul>
+        {% for link in site.data.navigation.menu %}
+          {% if link.childlist %}
+            <li class="dropdown" aria-haspopup="true">
+              <a href="{{ link.url }}" class="nav-link">
+                <h3>{{ link.title | escape }}</h3>
+              </a>
+              <ul class="dropdown_menu">
+                {% for childlink in link.childlist %}
+                  <li>
+                    <a href="{{ childlink.url }}" class="nav-link"><h3>{{ childlink.title | escape }}</h3></a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ link.url }}" class="nav-link{% if link.active %} active{% endif %}"><h3>{{ link.title }}</h3></a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <a class="popup-close" data-close>{% include icon.html icon='close' title='Close' %}</a>
+    </div>
+  </div>
+</div>

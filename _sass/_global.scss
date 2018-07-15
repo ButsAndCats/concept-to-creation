@@ -1,0 +1,46 @@
+
+/* Global ====================================================================*/
+
+html {
+  height: 100%;
+  font-size: 16px;
+  @include m() {
+    font-size: 15px;
+  }
+  @include s() {
+    font-size: 14px;
+  }
+}
+
+body {
+  height: 100%;
+  color: $colorText;
+  background-color: $colorBackground;
+  background-image: url('/assets/images/bg.png');
+  font-family: $bodyFontStack;
+  font-weight: $bodyFontWeight;
+  -webkit-font-smoothing: antialiased;
+  &.layout-post {
+    // background-color: $colorWhite;
+    .rte {
+      p, li {
+        color: $colorWhite;
+      }
+    }
+
+    p, h1, h2, h3, h4, h5, h6, li {
+      font-family: $serifFont;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 800;
+      margin-bottom: $gutter/2;
+      margin-top: $gutter;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  line-height: 0;
+}

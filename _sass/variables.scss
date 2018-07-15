@@ -1,0 +1,84 @@
+
+// Variables ===================================================================
+
+// Space & Borders
+$gutter: 50px;
+$spacing: 10px;
+$borderRadius: 0px;
+$borderWeight: 1px;
+$borderStyle: solid;
+$linkStyle: none;
+
+// Palette
+$colorWhite: #fbfbfb;
+$colorLightGray: #F5E6D0;
+$colorGray: #272727;
+$colorDarkGray: #1D1B1C;
+$colorBlack: #282a36;
+$colorPink: #FF025D;
+$colorPurple: #2A0D3F;
+$colorCyan: #64D9EF;
+$colorViolet: #8550CE;
+$colorYellow: #AD7C31;
+$colorGreen: #0DD7A7;
+$colorOrange: #FF7B31;
+$colorRed: #ff5555;
+
+// Color mixer.
+$colorOne: $colorRed;
+$colorTwo: $colorViolet;
+$colorThree: $colorGreen;
+$colorFour: $colorOrange;
+$colorFive: $colorPurple;
+$colorSix: $colorCyan;
+$colorSeven: $colorYellow;
+$colorEight: $colorPink;
+
+$adjustAmount: 5%;
+
+// Colors
+$colorBrand: $colorLightGray;
+$colorText: $colorLightGray;
+$colorForeground: $colorGray;
+$colorBackground: $colorDarkGray;
+$colorHighlight: $colorYellow;
+$colorAlternate: $colorYellow;
+$colorBorder: $colorYellow;
+
+// Typography
+$fontLight: 300;
+$fontRegular: 500;
+$fontBold: 700;
+$lineHeight: 1.75;
+$baseFontSize: 16px;
+
+// Font bases
+$headingFontMargin: $gutter/2;
+$h1Base: 3;
+$h2Base: 2.25;
+$h3Base: 2;
+$h4Base: 1.5;
+$h5Base: 1.3;
+$h6Base: 1.2;
+$pBase: 1.125;
+
+$bodyFontStack: 'Merriweather', 'Lucida Bright', serif;
+$headingFontStack: 'Playfair Display', serif;
+$bodyFontWeight: $fontRegular;
+$headingFontWeight: $fontRegular;
+$headingFontTransform: none;
+
+$serifFont: 'Merriweather', 'Lucida Bright', serif;
+
+// Screen Sizes
+$s: 650px;
+$m: 850px;
+$l: 1050px;
+$xl: 1450px;
+
+// Miscellaneous
+$transition: all .3s ease-out;
+
+// Icons
+$baseIconSize: 32px;
+$iconLinecap: square;

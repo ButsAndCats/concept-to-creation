@@ -1,0 +1,469 @@
+// Helpers
+
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.right {
+  text-align: right;
+}
+.wide {
+  width: 100%;
+}
+.tall {
+  height: 100%;
+}
+.hidden {
+  display: none;
+}
+.inline {
+  list-style: none;
+  display: inline-block;
+  li {
+    display: inline-block;
+  }
+}
+.clearfix {
+  @include clearfix();
+}
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
+}
+
+// Text Transform
+.t-uppercase {
+  text-transform: uppercase;
+}
+.t-capitalize {
+  text-transform: capitalize;
+}
+.t-none {
+  text-transform: none;
+}
+.t-lowercase {
+  text-transform: lowercase;
+}
+
+// Font Weights
+.w-light {
+  font-weight: $fontLight;
+}
+.w-normal {
+  font-weight: $fontRegular;
+}
+.w-bold {
+  font-weight: $fontBold;
+}
+
+.row-border {
+  border-bottom: $borderStyle 5px $colorPink;
+}
+
+/* Optional Additional Helpers ================================================*/
+
+// Margin & Padding
+@for $i from 0 through 20 {
+  $space: $spacing*$i;
+  .margin-#{$i}x {
+    margin: $space;
+  }
+  .margin-top-#{$i}x {
+    margin-top: $space;
+  }
+  .margin-bottom-#{$i}x {
+    margin-bottom: $space;
+  }
+  .margin-left-#{$i}x {
+    margin-left: $space;
+  }
+  .margin-right-#{$i}x {
+    margin-right: $space;
+  }
+  .padding-#{$i}x {
+    padding: $space;
+  }
+  .padding-top-#{$i}x {
+    padding-top: $space;
+  }
+  .padding-bottom-#{$i}x {
+    padding-bottom: $space;
+  }
+  .padding-left-#{$i}x {
+    padding-left: $space;
+  }
+  .padding-right-#{$i}x {
+    padding-right: $space;
+  }
+}
+@include xl() {
+  @for $i from 0 through 20 {
+    $space: $spacing*$i;
+    .xl-margin-#{$i}x {
+      margin: $space;
+    }
+    .xl-margin-top-#{$i}x {
+      margin-top: $space;
+    }
+    .xl-margin-bottom-#{$i}x {
+      margin-bottom: $space;
+    }
+    .xl-margin-left-#{$i}x {
+      margin-left: $space;
+    }
+    .xl-margin-right-#{$i}x {
+      margin-right: $space;
+    }
+    .xl-padding-#{$i}x {
+      padding: $space;
+    }
+    .xl-padding-top-#{$i}x {
+      padding-top: $space;
+    }
+    .xl-padding-bottom-#{$i}x {
+      padding-bottom: $space;
+    }
+    .xl-padding-left-#{$i}x {
+      padding-left: $space;
+    }
+    .xl-padding-right-#{$i}x {
+      padding-right: $space;
+    }
+  }
+}
+@include l() {
+  @for $i from 0 through 20 {
+    $space: $spacing*$i;
+    .l-margin-#{$i}x {
+      margin: $space;
+    }
+    .l-margin-top-#{$i}x {
+      margin-top: $space;
+    }
+    .l-margin-bottom-#{$i}x {
+      margin-bottom: $space;
+    }
+    .l-margin-left-#{$i}x {
+      margin-left: $space;
+    }
+    .l-margin-right-#{$i}x {
+      margin-right: $space;
+    }
+    .l-padding-#{$i}x {
+      padding: $space;
+    }
+    .l-padding-top-#{$i}x {
+      padding-top: $space;
+    }
+    .l-padding-bottom-#{$i}x {
+      padding-bottom: $space;
+    }
+    .l-padding-left-#{$i}x {
+      padding-left: $space;
+    }
+    .l-padding-right-#{$i}x {
+      padding-right: $space;
+    }
+  }
+}
+@include m() {
+  @for $i from 0 through 20 {
+    $space: $spacing*$i;
+    .m-margin-#{$i}x {
+      margin: $space;
+    }
+    .m-margin-top-#{$i}x {
+      margin-top: $space;
+    }
+    .m-margin-bottom-#{$i}x {
+      margin-bottom: $space;
+    }
+    .m-margin-left-#{$i}x {
+      margin-left: $space;
+    }
+    .m-margin-right-#{$i}x {
+      margin-right: $space;
+    }
+    .m-padding-#{$i}x {
+      padding: $space;
+    }
+    .m-padding-top-#{$i}x {
+      padding-top: $space;
+    }
+    .m-padding-bottom-#{$i}x {
+      padding-bottom: $space;
+    }
+    .m-padding-left-#{$i}x {
+      padding-left: $space;
+    }
+    .m-padding-right-#{$i}x {
+      padding-right: $space;
+    }
+  }
+}
+@include s() {
+  @for $i from 0 through 20 {
+    $space: $spacing*$i;
+    .s-margin-#{$i}x {
+      margin: $space;
+    }
+    .s-margin-top-#{$i}x {
+      margin-top: $space;
+    }
+    .s-margin-bottom-#{$i}x {
+      margin-bottom: $space;
+    }
+    .s-margin-left-#{$i}x {
+      margin-left: $space;
+    }
+    .s-margin-right-#{$i}x {
+      margin-right: $space;
+    }
+    .s-padding-#{$i}x {
+      padding: $space;
+    }
+    .s-padding-top-#{$i}x {
+      padding-top: $space;
+    }
+    .s-padding-bottom-#{$i}x {
+      padding-bottom: $space;
+    }
+    .s-padding-left-#{$i}x {
+      padding-left: $space;
+    }
+    .s-padding-right-#{$i}x {
+      padding-right: $space;
+    }
+  }
+}
+
+/* Color Palette =============================================================*/
+
+// Install after mixins.scss in the Concrete Slate app.scss
+
+$colors: $colorBrand, $colorText, $colorBackground, $colorForeground, $colorHighlight, $colorBorder, $colorPurple, $colorViolet, $colorPink, $colorYellow, $colorGreen, $colorOrange;
+$palettes: brand, text, background, foreground, highlight, border, 'purple', 'violet', 'pink', 'yellow', 'green', 'orange';
+
+@mixin color-palette($element, $color) {
+  @if $element == 'bg' {
+    background-color: $color;
+    &.palette {
+      button, .button,
+      input[type="button"],
+      input[type="submit"],
+      input[type="reset"],
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="search"],
+      input[type="checkbox"],
+      select,
+      textarea {
+        color: $color;
+      }
+    }
+  } @else {
+    color: $color;
+    a:not(.button) {
+      color: $color;
+      .icon svg {
+        .fill {
+          fill: $color;
+        }
+        .stroke {
+          stroke: $color;
+        }
+      }
+      &:hover {
+        color: lighten($color, $adjustAmount);
+        .icon svg {
+          .fill {
+            fill: lighten($color, $adjustAmount);
+          }
+          .stroke {
+            stroke: lighten($color, $adjustAmount);
+          }
+        }
+      }
+    }
+    &.palette {
+      h1, h2, h3, h4, h5, h6, p, ul, li, .rte {
+        color: $color;
+      }
+      a:not(.button) {
+        color: $color;
+        &:hover {
+          color: lighten($color, $adjustAmount);
+          .icon svg {
+            .fill {
+              fill: lighten($color, $adjustAmount);
+            }
+            .stroke {
+              stroke: lighten($color, $adjustAmount);
+            }
+          }
+        }
+      }
+      .icon {
+        .fill {
+          fill: $color;
+        }
+        .stroke {
+          stroke: $color;
+        }
+      }
+      button, .button,
+      input[type="button"],
+      input[type="submit"],
+      input[type="reset"],
+      select {
+        background-color: $color;
+        border-color: $color;
+        &:hover {
+          background-color: lighten($color, $adjustAmount);
+          border-color: lighten($color, $adjustAmount);
+        }
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="search"],
+      textarea {
+        background-color: $color;
+        border-color: $color;
+      }
+      input[type="checkbox"] {
+        border-color: $color;
+        &:checked {
+          background-color: $color;
+        }
+      }
+      hr {
+        border-color: $color;
+      }
+    }
+  }
+}
+
+@for $i from 1 through length($palettes) {
+  .fg-#{nth($palettes, $i)} {
+    @include color-palette(fg, nth($colors, $i));
+  }
+  .bg-#{nth($palettes, $i)} {
+    @include color-palette(bg, nth($colors, $i));
+  }
+
+  h1, h2, h3, h4, h5, h6, p, ul, li, .rte {
+    &.fg-#{nth($palettes, $i)} {
+      color: nth($colors, $i) !important;
+    }
+  }
+  a:not(.button) {
+    &.fg-#{nth($palettes, $i)} {
+      color: nth($colors, $i) !important;
+      &:hover {
+        color: lighten(nth($colors, $i), $adjustAmount) !important;
+      }
+    }
+  }
+  .icon {
+    &.fg-#{nth($palettes, $i)} {
+      svg {
+        .fill {
+          fill: nth($colors, $i) !important;
+        }
+        .stroke {
+          stroke: nth($colors, $i) !important;
+        }
+      }
+    }
+  }
+  button, .button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  select {
+    &.fg-#{nth($palettes, $i)} {
+      color: nth($colors, $i) !important;
+    }
+    &.bg-#{nth($palettes, $i)} {
+      background-color: nth($colors, $i) !important;
+      border-color: nth($colors, $i) !important;
+      &:hover {
+        background-color: lighten(nth($colors, $i), $adjustAmount) !important;
+        border-color: lighten(nth($colors, $i), $adjustAmount) !important;
+      }
+    }
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="search"],
+  textarea {
+    &.fg-#{nth($palettes, $i)} {
+      color: nth($colors, $i) !important;
+    }
+    &.bg-#{nth($palettes, $i)} {
+      background-color: nth($colors, $i) !important;
+      border-color: nth($colors, $i) !important;
+    }
+  }
+  input[type="checkbox"] {
+    &.fg-#{nth($palettes, $i)} {
+      border-color: nth($colors, $i) !important;
+      &:checked {
+        background-color: nth($colors, $i) !important;
+      }
+    }
+  }
+  hr {
+    &.fg-#{nth($palettes, $i)} {
+      border-color: nth($colors, $i) !important;
+    }
+  }
+}
+
+.vertical-align {
+  @include vertical-align();
+}
+
+.image-wrapper {
+  // @include s() {
+  //   &.ratio.contain {
+  //     background-size: 200%;
+  //     background-position: center left;
+  //   }
+  // }
+  .content {
+    opacity: 0;
+    will-change: opacity;
+    transition: $transition;
+    background-color: rgba($colorPurple, 0.6);
+    @include s() {
+      * {
+        // color: $colorWhite!important;
+
+      }
+    }
+    &:hover {
+      opacity: 1;
+    }
+    @include s() {
+      opacity: 1;
+      // background-color: transparent;
+    }
+  }
+}

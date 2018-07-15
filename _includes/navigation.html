@@ -1,0 +1,29 @@
+<nav class="theme-nav-main s-hide" role="navigation">
+  <ul class="inline">
+    {% for link in site.data.navigation.menu %}
+      {% if link.childlist %}
+        <li class="dropdown" aria-haspopup="true">
+          <a href="{{ link.url }}" class="nav-link h4">
+            {{ link.title | escape }}
+          </a>
+          <ul class="dropdown_menu">
+            {% for childlink in link.childlist %}
+              <li>
+                <a href="{{ childlink.url }}" class="nav-link h4">{{ childlink.title | escape }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% else %}
+        <li>
+          <a href="{{ link.url }}" class="nav-link{% if link.active %} active{% endif %} h4">{{ link.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+<nav class="theme-nav-main s-show" role="navigation">
+  <a data-trigger="popup" data-target="#mobilePopup">
+    {% include icon.html icon="menu" title="Menu" size="32" %}
+  </a>
+</nav>

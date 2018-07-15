@@ -1,0 +1,43 @@
+// Tables
+th, .th {
+  font-weight: $fontBold;
+}
+
+.rte {
+  ul, ol {
+    list-style: initial;
+    list-style-position: inside;
+    margin-bottom: $gutter/2;
+    li {
+      list-style: inherit;
+      list-style-position: inherit;
+      margin-bottom: $gutter/2;
+    }
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  table {
+    width: 100%;
+    tr {
+      td {
+        padding: $gutter/4;
+        &:first-of-type {
+          padding-left: 0;
+        }
+        &:last-of-type {
+          padding-right: 0;
+        }
+      }
+    }
+    // Alternating rows
+    &.alternate tr {
+      &:nth-child(odd) {
+        background-color: rgba($colorText, 0.05);
+      }
+      td {
+        padding: $gutter/4;
+      }
+    }
+  }
+}

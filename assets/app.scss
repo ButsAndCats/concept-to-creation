@@ -1,0 +1,27 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials
+---
+
+
+// Imports =====================================================================
+
+@import "variables";
+@import "mixins";
+@import "reset";
+@import "global";
+@import "typography";
+@import "tables";
+@import "forms";
+@import "grid";
+@import "header";
+@import "footer";
+@import "main";
+@import "navigation";
+@import "helpers";
+@import "code";
+@import "icons";
+
+// Add your additional css to the additions file if you wish to update easily
+// later.
+@import "additions";

@@ -1,0 +1,76 @@
+{% include head.html %}
+{% include header.html %}
+
+<section class="section-1">
+  <div class="container l l-padding-top-10x l-padding-bottom-10x m-padding-top-5x m-padding-bottom-5x">
+    <div class="row l-table m-table s-reverse">
+      <div class="column l6 m6 s12">
+        <div class="collage">
+          <div data-ratio="3:4" class="ratio bg-foreground center" style="max-width: 80%;">
+          </div>
+          <div data-ratio="3:5" class="ratio img img-2" style="background-image: url('assets/images/image2.jpg'); max-width: 80%;">
+          </div>
+          <div data-ratio="1:1" class="ratio img img-1" style="background-image: url('assets/images/image1.jpg');max-width: 80%;">
+          </div>
+        </div>
+      </div>
+      <div class="column l6 m6 s12 v-middle s-margin-top-10x">
+        <h3>About Us</h3>
+        <hr class="small">
+        <p>
+          We are designer jewellers based in Neath, offering classes inspiring creativity in a welcoming environment for all abilities. The only thing that's compulsory in our workshop is tea and biscuits!
+        </p>
+        <p>
+          To find out more email us here or see what's going on in our world at the bench:
+        </p>
+        <ul class="inline" itemscope itemtype="http://schema.org/Organization">
+          {% for social in site.data.navigation.social %}
+            <li class="margin-right-3x">
+              <a href="{{ social.url }}" title="{{ site.name }} on {{ social.title }}" itemprop="sameAs" target="_blank" rel="nofollow">
+                {% include icon.html icon=social.icon size=40 title=social.title %}
+              </a>
+            </li>
+          {% endfor %}
+      </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-foreground margin-top-10x">
+  <div class="container s">
+    <div class="row padding-top-5x">
+      <div class="column l12 m12 s12 center">
+        <h2>
+          Subscribe
+        </h2>
+        <hr class="small center">
+        <p>
+          Join our mailing list to keep up to date with all the latest from the workshop.
+        </p>
+      </div>
+      <div class="column l12 m12 s12">
+        <form action="https://concepttocreationjewellery.us18.list-manage.com/subscribe/post?u=3c2f1d306c5341034c7f56217&amp;id=43ca586b85" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate wide" target="_blank" novalidate>
+          <input type="text" class="visually-hidden" name="b_3c2f1d306c5341034c7f56217_43ca586b85" tabindex="-1" value="">
+          <div class="row margin-bottom-2x">
+          	<label class="visually-hidden" for="mce-FNAME">First Name </label>
+          	<input class="wide" type="text" value="" name="FNAME" class="required" placeholder="First Name" id="mce-FNAME">
+          </div>
+          <div class="row margin-bottom-2x">
+          	<label class="visually-hidden" for="mce-LNAME">Last Name </label>
+          	<input class="wide" type="text" value="" name="LNAME" class="required" id="mce-LNAME" placeholder="Last Name">
+          </div>
+          <div class="row margin-bottom-2x">
+          	<label class="visually-hidden" for="mce-EMAIL">Email Address </label>
+          	<input class="wide" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+          </div>
+          <div class="row margin-bottom-10x center">
+            <input type="submit" value="Subscribe" name="subscribe">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include footer.html %}

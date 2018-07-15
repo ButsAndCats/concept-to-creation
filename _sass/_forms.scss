@@ -1,0 +1,240 @@
+/* Forms =====================================================================*/
+
+form {
+  max-width: 100%;
+  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: transparent;
+  }
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+textarea {
+  max-width: 100%;
+  height: $gutter;
+  line-height: 1;
+  padding: 0;
+  font-size: 1.125rem;
+  font-family: inherit;
+  border-bottom: 1px $colorBrand $borderStyle;
+  border-radius: $borderRadius;
+  -webkit-appearance: none;
+  // Input & textarea placeholders
+  &::placeholder { // Spec
+    color: inherit;
+    opacity: 0.75;
+  }
+  &::-webkit-input-placeholder { // Webkit
+    color: inherit;
+    opacity: 0.75;
+  }
+  &::-moz-placeholder { // Firefox 19+
+    color: inherit;
+    opacity: 0.75;
+  }
+  &:-ms-input-placeholder { // IE 10+
+    color: inherit;
+    opacity: 0.75;
+  }
+  &:-moz-placeholder { // Firefox 18-
+    color: inherit;
+    opacity: 0.75;
+  }
+  @media only screen and (max-width: $s) {
+    width: 100%;
+    clear: both;
+    margin-bottom: $gutter/3;
+  }
+  &.error {
+    border-color: $colorHighlight;
+  }
+}
+textarea {
+  height: initial;
+  line-height: $lineHeight;
+  font-family: inherit; // for Firefox
+}
+label {
+  line-height: inherit;
+}
+button, .button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select {
+  display: inline-block;
+  max-width: 100%;
+  padding: 15px $gutter/1.5;
+  font-size: 1.125rem;
+  font-family: $bodyFontStack;
+  font-weight: $bodyFontWeight;
+  text-align: center;
+  color: $colorBrand;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px $borderStyle $colorBrand;
+  border-radius: $borderRadius;
+  @include prefixer(appearance, none, webkit moz);
+  @include transition();
+  option {
+    // for Firefox
+    background-color: $colorBackground;
+    border: 0;
+    display: block;
+    color: $colorText;
+  }
+  &:hover {
+    background-color: darken($colorBrand, 5%);
+    border-color: darken($colorBrand, 5%);
+    color: $colorForeground;
+    cursor: pointer;
+  }
+  &.alternate {
+    color: lighten($colorAlternate, 25%);
+    background-color: $colorAlternate;
+    border: $borderWeight $borderStyle $colorAlternate;
+    &:hover {
+      background-color: darken($colorAlternate, 5%);
+      border-color: darken($colorAlternate, 5%);
+      color: lighten($colorAlternate, 35%);
+    }
+  }
+  &:disabled, &.disabled {
+    cursor: default;
+    background-color: lighten($colorAlternate, 30%);
+    border-color: lighten($colorAlternate, 30%);
+    color: lighten($colorAlternate, 0%);
+    &:hover {
+      @extend .disabled
+    }
+  }
+  @include s() {
+    width: 100%;
+    clear: both;
+    margin-bottom: $gutter/3;
+  }
+}
+// Checkboxes
+input[type="checkbox"] {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border: $borderWeight $borderStyle $colorAlternate;
+  border-radius: $borderRadius;
+  cursor: pointer;
+  &:checked {
+    background-color: $colorText;
+  }
+}
+// Hide number input spinner
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input::-webkit-textfield-decoration-container {
+  display: inline;
+  align-items: center;
+  content: inherit !important;
+}
+// Range slider inputs
+.range-slider {
+  position: relative;
+  display: inline-block;
+  margin-top: 1rem;
+  width: 100%;
+  span {
+    position: absolute;
+    line-height: 1rem;
+    &:nth-of-type(1) {
+      top: -1rem;
+      left: 0;
+    }
+    &:nth-of-type(2) {
+      top: -1rem;
+      right: 0;
+    }
+  }
+  @mixin inputSliderThumb() {
+    width: $gutter/3 - $borderRadius*2;
+    height: $gutter/3 - $borderRadius*2;
+    background-color: $colorText;
+    border: 0;
+    // border-radius: ($gutter/3 - $borderRadius*2)/2; For a circular grabber
+    cursor: pointer;
+  }
+  @mixin inputSliderTrack() {
+    background-color: transparent;
+    cursor: pointer;
+  }
+  input[type=range] {
+    width: 100%;
+    height: $gutter/3;
+    display: inline-block;
+    border: $borderWeight $borderStyle $colorAlternate;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    &::-webkit-slider-runnable-track {
+      @include inputSliderTrack();
+    }
+    &::-moz-range-track {
+      @include inputSliderTrack();
+    }
+    &::-ms-track {
+      @include inputSliderTrack();
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      @include inputSliderThumb();
+    }
+    &::-moz-range-thumb {
+      @include inputSliderThumb();
+      border-radius: 0;
+    }
+    &::-moz-range-thumb {
+      @include inputSliderThumb();
+    }
+    // Firefox focus fix
+    &::-moz-focus-outer {
+      border: 0;
+    }
+    // Edge
+    &::-ms-tooltip {
+        display: none;
+    }
+  }
+}
+a.button {
+  display: inline-block;
+  text-decoration: none;
+}
+.select-wrapper {
+  display: inline-block;
+  position: relative;
+  @media only screen and (max-width: $s) {
+    width: 100%;
+    clear: both;
+    margin-bottom: $gutter/3;
+  }
+}
+.errors, .note {
+  padding: $gutter/3.5;
+  margin: $gutter/2 auto;
+  color: lighten($colorHighlight, 50%);
+  background-color: $colorHighlight;
+  border: $borderWeight $borderStyle $colorHighlight;
+  border-radius: $borderRadius;
+  li {
+    margin-bottom: $gutter/3;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  a {
+    color: lighten($colorHighlight, 50%);
+  }
+}

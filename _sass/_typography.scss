@@ -1,0 +1,113 @@
+
+// Typography
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $headingFontStack;
+  display: block;
+  font-weight: $headingFontWeight;
+  line-height: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-transform: $headingFontTransform;
+  letter-spacing: 2px;
+}
+
+h1, .h1 {
+  font-size: $h1Base+rem;
+}
+h2, .h2 {
+  font-size: $h2Base+rem;
+}
+h3, .h3 {
+  font-size: $h3Base+rem;
+}
+h4, .h4 {
+   font-size: $h4Base+rem;
+}
+h5, .h5 {
+   font-size: $h5Base+rem;
+}
+h6, .h6 {
+  font-size: $h6Base+rem;
+}
+
+p {
+  font-size: $pBase+rem;
+  font-weight: $bodyFontWeight;
+  line-height: $lineHeight;
+  margin-bottom: 1.4rem;
+}
+
+a {
+  color: $colorBrand;
+  cursor: pointer;
+  text-decoration: $linkStyle;
+  @include transition();
+  &:hover, &:focus {
+    color: darken($colorBrand, 5%);
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px $borderStyle $colorBrand;
+  max-width: 600px;
+  margin: $gutter/1.5 auto;
+  &.small {
+    max-width: $gutter;
+    margin: $gutter/1.5 0;
+    &.center {
+      margin: $gutter/1.5 auto;
+    }
+  }
+}
+
+strong, b {
+  font-weight: $fontBold;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+i {
+  font-style: italic;
+}
+
+.rte {
+  // Responsive typography
+  h1, .h1 {
+    @include responsive-type($baseFontSize, $h1Base, $baseFontSize, normal);
+  }
+  h2, .h2 {
+    @include responsive-type($baseFontSize, $h2Base, $baseFontSize, normal);
+  }
+  h3, .h3 {
+    @include responsive-type($baseFontSize, $h3Base, $baseFontSize, normal);
+  }
+  h4, .h4 {
+    @include responsive-type($baseFontSize, $h4Base, $baseFontSize, normal);
+  }
+  h5, .h5 {
+    @include responsive-type($baseFontSize, $h5Base, $baseFontSize, normal);
+  }
+  h6, .h6 {
+    @include responsive-type($baseFontSize, $h6Base, $baseFontSize, normal);
+  }
+  p, li {
+    @include responsive-type($baseFontSize, 1, $baseFontSize, normal);
+  }
+}
+
+.font-article {
+  font-family: $serifFont;
+}
+
+.article-tag {
+  background-color: #ed3b5b;
+  color: #2a0e3f;
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-size: 0.9rem;
+}
