@@ -19,6 +19,7 @@ description: Concept to Creation Jewellery
 name: Concept To Creation
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "concepttocreation.com" # the base hostname & protocol for your site, e.g. http://example.com
+destination: site
 
 
 # Build settings
