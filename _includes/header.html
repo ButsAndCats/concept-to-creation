@@ -3,7 +3,7 @@
     <ul class="inline w-full">
       {% for link in site.data.navigation.menu %}
         <li class="padding-1x">
-          <a href="{{ link.url }}" title="{{ link.title }}">
+          <a href="{{ site.github.url }}{{ link.url }}" title="{{ link.title }}">
             {{ link.title }}
           </a>
         </li>
