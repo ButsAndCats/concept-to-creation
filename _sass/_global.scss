@@ -16,7 +16,7 @@ body {
   height: 100%;
   color: $colorText;
   background-color: $colorBackground;
-  background-image: url('/assets/images/bg.png');
+  background-image: url('{{ site.github.url }}/assets/images/bg.png');
   font-family: $bodyFontStack;
   font-weight: $bodyFontWeight;
   -webkit-font-smoothing: antialiased;
