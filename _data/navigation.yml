@@ -11,9 +11,9 @@ social:
   - icon: instagram
     title: Instagram
     url: https://www.instagram.com/jewellersofneath/
-  - icon: twitter
-    title: Twitter
-    url: https://twitter.com/jewellersneath
+  # - icon: twitter
+  #   title: Twitter
+  #   url: https://twitter.com/jewellersneath
   - icon: facebook
     title: Facebook
     url: https://www.facebook.com/jewellersofneath
