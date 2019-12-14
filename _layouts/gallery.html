@@ -1,40 +1,8 @@
 {% include head.html %}
 {% include header.html %}
 
-<section class="section-1">
-  <div class="container l l-padding-top-2x l-padding-bottom-2x m-padding-top-1x m-padding-bottom-1x">
-    <div class="row l-table m-table">
-      <div class="column l6 m6 s-hide">
-        <div class="collage">
-          <div data-ratio="3:4" class="ratio bg-foreground center" style="max-width: 80%;">
-          </div>
-          <div data-ratio="3:5" class="ratio img img-2" style="background-image: url('assets/images/image2.jpg'); max-width: 80%;">
-          </div>
-          <div data-ratio="1:1" class="ratio img img-1" style="background-image: url('assets/images/image1.jpg');max-width: 80%;">
-          </div>
-        </div>
-      </div>
-      <div class="column l6 m6 s12 v-middle">
-        <h2>Jewellery making workshop in Neath</h2>
-        <hr class="small">
-        <p>
-          We are designer jewellers based in Neath, offering classes inspiring creativity in a welcoming environment for all abilities. The only thing that's compulsory in our workshop is tea and biscuits!
-        </p>
-        <p>
-          To find out more email us here or see what's going on in our world at the bench:
-        </p>
-        <ul class="inline" itemscope itemtype="http://schema.org/Organization">
-          {% for social in site.data.navigation.social %}
-            <li class="margin-right-3x">
-              <a href="{{ social.url }}" title="{{ site.name }} on {{ social.title }}" itemprop="sameAs" target="_blank" rel="nofollow">
-                {% include icon.html icon=social.icon size=40 title=social.title %}
-              </a>
-            </li>
-          {% endfor %}
-      </ul>
-      </div>
-    </div>
-  </div>
+<section class="gallery">
+  
 </section>
 
 <section class="bg-foreground margin-top-5x padding-left-2x padding-right-2x" id="subscribe">

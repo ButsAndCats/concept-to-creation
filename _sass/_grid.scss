@@ -21,7 +21,7 @@
     padding: 0 $gutter;
   }
   @include s() {
-    padding: 0 $gutter;
+    padding: 0 $gutter / 2;
   }
 }
 
