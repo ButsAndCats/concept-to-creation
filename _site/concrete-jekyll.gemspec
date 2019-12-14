@@ -14,6 +14,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://rubygems.org/gems/concrete-jekyll'
   s.license     = 'MIT'
   s.metadata["plugin_type"] = "theme"
-  s.add_runtime_dependency "jekyll", "~> 3.3"
+  s.add_runtime_dependency "jekyll", ">= 3.3", "< 5.0"
   s.add_development_dependency "bundler", "~> 1.12"
 end
