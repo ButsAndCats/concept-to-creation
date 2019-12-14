@@ -1,0 +1,10 @@
+---
+label: Gallery
+hide_body: true
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: image_gallery
+  name: images
+  label: images
