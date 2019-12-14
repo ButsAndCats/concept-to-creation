@@ -1,7 +1,7 @@
 {% include head.html %}
 {% include header.html %}
 
-<section class="gallery">
+<section class="gallery" id="Gallery">
   <div class="container l">
     <div class="row">
       <div class="column">
@@ -12,8 +12,8 @@
     <div class="row">
       {% for image in page.images %}
         <div class="column l3 m6 s12">
-          <div class="ratio" data-index="{{ forloop.index }}" data-ratio="1:1" style="background-image: url('{{ site.github.url }}{{ image }}')">
-          </div>
+          <a class="ratio" data-gallery-index="{{ forloop.index }}" data-ratio="1:1" style="background-image: url('{{ site.github.url }}{{ image }}')">
+          </a>
         </div>
       {% endfor %}
     </div>
@@ -21,12 +21,9 @@
 </section>
 <div class="popup overlay full-screen" id="GalleryPopup">
   <div class="popup-inner">
-    <div class="popup-content container padding-top center">
+    <div class="popup-content container padding-left-1x padding-right-1x center" data-slick>
       {% for image in page.images %}
-        <div class="column l3 m6 s12">
-          <div class="ratio" data-ratio="1:1" style="background-image: url('{{ site.github.url }}{{ image }}')">
-          </div>
-        </div>
+        <img src="{{ site.github.url }}{{ image }}" />
       {% endfor %}
       <a class="popup-close" data-close>
         {% include icon.html icon='close' title='Close' %}
@@ -34,5 +31,5 @@
     </div>
   </div>
 </div>
-{% include subscribe.html %}
+{% include sections/subscribe.html %}
 {% include footer.html %}
