@@ -37,36 +37,5 @@
   </div>
 </section>
 
-<section class="bg-foreground margin-top-5x padding-left-2x padding-right-2x" id="subscribe">
-  <div class="container s">
-    <div class="row padding-top-4x">
-      <div class="column l12 m12 s12 center">
-        <p>
-          Join our mailing list to keep up to date with all the latest from the workshop.
-        </p>
-      </div>
-      <div class="column l12 m12 s12">
-        <form action="https://concepttocreationjewellery.us18.list-manage.com/subscribe/post?u=3c2f1d306c5341034c7f56217&amp;id=43ca586b85" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate wide" target="_blank" novalidate>
-          <input type="text" class="visually-hidden" name="b_3c2f1d306c5341034c7f56217_43ca586b85" tabindex="-1" value="">
-          <div class="margin-bottom-2x">
-          	<label class="visually-hidden" for="mce-FNAME">First Name </label>
-          	<input class="wide" type="text" value="" name="FNAME" class="required" placeholder="First Name" id="mce-FNAME">
-          </div>
-          <div class="margin-bottom-2x">
-          	<label class="visually-hidden" for="mce-LNAME">Last Name </label>
-          	<input class="wide" type="text" value="" name="LNAME" class="required" id="mce-LNAME" placeholder="Last Name">
-          </div>
-          <div class="margin-bottom-2x">
-          	<label class="visually-hidden" for="mce-EMAIL">Email Address </label>
-          	<input class="wide" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
-          </div>
-          <div class="margin-bottom-4x center">
-            <input type="submit" value="Subscribe" name="subscribe">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
+{% include subscribe.html %}
 {% include footer.html %}
