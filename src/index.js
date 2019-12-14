@@ -33,7 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   if (document.querySelector('#Gallery')) {
-    $('[data-slick]').slick();
+    $('[data-slick]').slick({
+      arrows: false,
+    });
     const galleryPopup = new Limelight({
       target: '#GalleryPopup',
     });
