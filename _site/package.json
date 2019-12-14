@@ -1,0 +1,33 @@
+{
+  "name": "concept-to-creation",
+  "version": "1.0.0",
+  "description": "Jekyll theme for Concept to Creation",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production --watch",
+    "start": "bundle exec jekyll serve && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ButsAndCats/concept-to-creation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ButsAndCats/concept-to-creation/issues"
+  },
+  "homepage": "https://github.com/ButsAndCats/concept-to-creation#readme",
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-google": "^0.14.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@butsandcats/limelight": "^3.0.1",
+    "jquery": "^3.4.1",
+    "slick-carousel": "^1.8.1"
+  }
+}

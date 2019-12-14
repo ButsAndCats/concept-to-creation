@@ -11,9 +11,9 @@
     </div>
     <div class="row">
       {% for image in page.images %}
-        <div class="column l3 m6 s12">
-          <a class="ratio" data-gallery-index="{{ forloop.index }}" data-ratio="1:1" style="background-image: url('{{ site.github.url }}{{ image }}')">
-          </a>
+        <div class="column l4 m6 s12">
+          <div class="ratio cursor-pointer" data-gallery-index="{{ forloop.index | minus: 1 }}" data-ratio="1:1" style="background-image: url('{{ site.github.url }}{{ image }}')">
+          </div>
         </div>
       {% endfor %}
     </div>
@@ -21,10 +21,14 @@
 </section>
 <div class="popup overlay full-screen" id="GalleryPopup">
   <div class="popup-inner">
-    <div class="popup-content container padding-left-1x padding-right-1x center" data-slick>
-      {% for image in page.images %}
-        <img src="{{ site.github.url }}{{ image }}" />
-      {% endfor %}
+    <div class="popup-content container padding-4x center">
+      <div data-slick>
+        {% for image in page.images %}
+          <div>
+            <img class="mx-auto" src="{{ site.github.url }}{{ image }}" />
+          </div>
+        {% endfor %}
+      </div>
       <a class="popup-close" data-close>
         {% include icon.html icon='close' title='Close' %}
       </a>
