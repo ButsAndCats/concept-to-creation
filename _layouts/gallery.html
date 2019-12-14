@@ -2,7 +2,9 @@
 {% include header.html %}
 
 <section class="gallery">
-  
+  {% for image in page.images %}
+    <img src="{{ site.github.url }}/uploads/{{ image }}" />
+  {% endfor %}
 </section>
 
 <section class="bg-foreground margin-top-5x padding-left-2x padding-right-2x" id="subscribe">
