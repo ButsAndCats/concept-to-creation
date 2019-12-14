@@ -1,4 +1,6 @@
 ---
 layout: gallery
-images: []
+images:
+- image1.jpg
+
 ---
